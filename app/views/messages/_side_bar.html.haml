@@ -1,0 +1,23 @@
+.side-bar
+  .user-name
+    .top-items
+      .name
+        masa
+      %ul.top-items__icons
+        %li.top-items__new-group
+          = link_to "#", class: "icon" do
+            = icon('far', 'edit')
+        %li.top-items__edit
+          = link_to "#", class: "icon" do
+            = icon('fas', 'cog')
+  .group-list
+    .top
+      .name
+        techcamp
+      .message
+        まだメッセージがありません
+    .top
+      .name
+        expert
+      .message
+        メッセージが投稿されました
