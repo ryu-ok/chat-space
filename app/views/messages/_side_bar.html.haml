@@ -13,8 +13,8 @@
   .group-list
     - current_user.groups.each do |group|
       .group
-        = link_to group_messages_path(group) do
+        = link_to '#' do
           .name
             = group.name
           .message
-            = group.show_last_message
+            メッセージはまだありません。

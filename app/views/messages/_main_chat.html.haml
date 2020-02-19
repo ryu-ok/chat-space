@@ -2,21 +2,32 @@
   .group-info
     .box
       .name
-        = @group.name
+        test
       .edit
-        = link_to edit_group_path(@group) , class: 'edit-btn' do
+        = link_to '#', class: 'edit-btn' do
           edit
     .member
-      Member : 
-      - @group.users.each do |user|
-        = user.name
-  .messages
-    = render @messages
+      Member : masa
+  .message-list
+    .top
+      .name
+        masa
+      .created_at
+        2020/02/18(Tue) 13:32:09
+    .message
+      おはよう！
+    .top
+      .name
+        masa
+      .created_at
+        2020/02/18(Tue) 13:59:45
+    .message
+      今日は夜から雨
   .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+    %form.new__message
       .input-box
-        = f.label :image, class: 'input-box__image' do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'submit-btn'
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
