@@ -2,52 +2,52 @@ $(function(){
 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="top">` +
-          `<div class="name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="created_at">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="bottom-message">` +
-          `<p class="bottom-message__content">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="bottom-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="message" data-message-id= ${message.id} >
+        <div class="top">
+          <div class="name">
+            ${message.user_name} 
+          </div> 
+          <div class="created_at">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="bottom-message">
+          <p class="bottom-message__content">
+            ${message.content}
+          </p>
+          <img src=" ${message.image} " class="bottom-message__image" >
+        </div> 
+      </div>`
     } else if (message.content) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="top">` +
-          `<div class="name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="created_at">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="bottom-message">` +
-          `<p class="bottom-message__content">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="message" data-message-id= ${message.id} > 
+        <div class="top">
+          <div class="name">
+            ${message.user_name}
+          </div>
+          <div class="created_at">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="bottom-message">
+          <p class="bottom-message__content">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
     } else if (message.image) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="top">` +
-          `<div class="name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="created_at">` +
+      var html = `<div class="message" data-message-id= ${message.id} >
+        <div class="top"> 
+          <div class="name"> 
+            ${message.user_name} 
+          </div>
+          <div class="created_at">
             message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="bottom-message">` +
-          `<img src="` + message.image + `" class="bottom-message__image" >` +
-        `</div>` +
-      `</div>`
+          </div>
+        </div>
+        <div class="bottom-message">
+          <img src=" ${message.image} " class="bottom-message__image" > 
+        </div>
+      </div>`
     };
     return html;
   };
@@ -94,6 +94,7 @@ $(function(){
       }
     })
     .fail(function() {
+      alert("error")
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
