@@ -137,14 +137,12 @@ $base_color: #ffffff;
       display: flex;
       .input-box {
         width: 100%;
-        display: flex;
         position: relative;
-        background-color: white;
         &__text {
           width: 100%;
           border-style: none;
-          padding: 0 40px 0 10px;
           height: 50px;
+          padding: 0 40px 0 10px;
         }
         &__image {
           cursor: pointer;
